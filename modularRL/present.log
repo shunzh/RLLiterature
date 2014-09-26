@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.27)  25 SEP 2014 23:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.27)  26 SEP 2014 00:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -930,59 +930,55 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [3
 
+] [4
+
+] [5
+
 ]
-<option.png, id=109, 726.715pt x 410.53375pt>
+[6
+
+] <option.png, id=185, 726.715pt x 410.53375pt>
 File: option.png Graphic file (type png)
  <use option.png>
 Package pdftex.def Info: option.png used on input line 52.
 (pdftex.def)             Requested size: 245.83282pt x 138.87177pt.
- [4
+ [7
 
- <./option.png>] [5
+ <./option.png>] [8
 
-] <ham.png, id=162, 536.0025pt x 484.81125pt>
+] <ham.png, id=238, 536.0025pt x 484.81125pt>
 File: ham.png Graphic file (type png)
  <use ham.png>
 Package pdftex.def Info: ham.png used on input line 68.
 (pdftex.def)             Requested size: 184.3758pt x 166.76442pt.
- [6
+ [9
 
- <./ham.png>] <taxi.png, id=188, 279.0425pt x 263.98625pt>
+ <./ham.png>] <taxi.png, id=265, 279.0425pt x 263.98625pt>
 File: taxi.png Graphic file (type png)
  <use taxi.png>
 Package pdftex.def Info: taxi.png used on input line 75.
 (pdftex.def)             Requested size: 122.91406pt x 116.27917pt.
 
-<maxq.png, id=189, 949.5475pt x 366.36874pt>
+<maxq.png, id=266, 949.5475pt x 366.36874pt>
 File: maxq.png Graphic file (type png)
  <use maxq.png>
 Package pdftex.def Info: maxq.png used on input line 75.
 (pdftex.def)             Requested size: 245.83282pt x 94.85112pt.
- [7
+ [10
 
- <./taxi.png> <./maxq.png>] [8
+ <./taxi.png> <./maxq.png>] [11
 
-] <layer.png, id=241, 812.03375pt x 440.64626pt>
-File: layer.png Graphic file (type png)
- <use layer.png>
-Package pdftex.def Info: layer.png used on input line 91.
-(pdftex.def)             Requested size: 245.83282pt x 133.39844pt.
-
-[9
-
- <./layer.png>] [10
-
-] <mrl.png, id=294, 930.47626pt x 691.58376pt>
+] <mrl.png, id=317, 930.47626pt x 691.58376pt>
 File: mrl.png Graphic file (type png)
-
-<use mrl.png>
-Package pdftex.def Info: mrl.png used on input line 107.
+ <use mrl.png>
+Package pdftex.def Info: mrl.png used on input line 91.
 (pdftex.def)             Requested size: 245.83282pt x 182.70952pt.
- [11
 
- <./mrl.png>] [12
+[12
 
-] [13
+ <./mrl.png>] [13
+
+] [14
 
 ]
 \tf@nav=\write6
@@ -994,11 +990,11 @@ Package pdftex.def Info: mrl.png used on input line 107.
 \tf@snm=\write8
 \openout8 = `present.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
  (./present.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 129.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 129.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
 Package rerunfilecheck Info: File `present.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1006,16 +1002,16 @@ Package rerunfilecheck Info: File `present.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 129.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
- 17905 strings out of 495028
- 339828 string characters out of 6181497
- 411085 words of memory out of 5000000
- 20655 multiletter control sequences out of 15000+600000
+ 17899 strings out of 495028
+ 339766 string characters out of 6181497
+ 411083 words of memory out of 5000000
+ 20648 multiletter control sequences out of 15000+600000
  10552 words of font info for 39 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,16n,59p,413b,548s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,16n,59p,413b,552s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
@@ -1024,10 +1020,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb>
-Output written on present.pdf (13 pages, 437642 bytes).
+Output written on present.pdf (14 pages, 400918 bytes).
 PDF statistics:
- 404 PDF objects out of 1000 (max. 8388607)
- 359 compressed objects within 4 object streams
- 27 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 428 PDF objects out of 1000 (max. 8388607)
+ 383 compressed objects within 4 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

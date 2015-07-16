@@ -1,108 +1,43 @@
-\section{Overview}
+\section{Task Decomposition}
 
-Markov Decision Process
-MDP:
-\begin{itemize}
-\item State: $S$.
-\item Action: $A$.
-\item Transition: $P: S \times A \times S \rightarrow \mathcal{R}$.
-\item Reward: $R: S \times A \times S \rightarrow \mathcal{R}$.
-\end{itemize}
+Modularization is one approach to reduce the dimension of the state space. In
+this section, we will discuss some major approaches of MDP decomposition as
+solutions to the curse of dimensionality. We will discuss a hierarchical
+approach and a layered approach.
 
-\begin{sidewaystable}
+Some complex tasks have explicit phases. Take the taxi domain for example
+(Figure~\ref{fig:taxi}). The taxi driver picks up a passenger from a location,
+and drives and drops him at a different location. This task requires some shared
+low-level skills. Hierarchical RL
+
+\begin{figure}[h]
 \centering
-\begin{tabular}{| l | l | l | l | l |}
-  \hline
-  Approaches & State & Action & Reward & Value/Q \\
-  \hline
-  MDP with Option & / & Aggregated actions & / & /\\
-  \hline
-  Factored MDP & Decomposed states & / & / & Decomposed or not\\
-  \hline
-  HAM & / & / & / & / \\
-  \hline
-  Modular RL & / & / & / & / \\
-  \hline
-\end{tabular}
-\label{tbl:overview}
-\caption{Overview of decomposition or aggregation of the components of MDP.}
-\end{sidewaystable}
+\includegraphics[width=0.3\textwidth]{taxi.png}
+\includegraphics[width=0.6\textwidth]{maxq.png}
+\caption{(Left) Taxi domain. (Right) A decomposition of the task.}
+\label{fig:taxi}
+\vspace{-0.25cm}
+\end{figure}
 
-\section{Forward Model}
+Another popular method, skill switching, also lays in hierarchical RL. 
 
-Abstraction on MDP
-\begin{itemize}
-  \item Aggregate states: feature extraction. 
-  \item Aggregate actions: {\bf option}. 
-  \item Decompose transition: factored MDP. 
-  \item Decompose value (abstract MDP): {\bf HAM, hierarchical RL, modular RL}.
-\end{itemize}
+Hierarchical reinforcement learning is different from modular reinforcement
+learning in a way that the former approach doesn't involve concurrent modules
+(or sutasks, skills, depending on context).
+For example, the Pickup module doesn't run parallel with Navigate module.
+Therefore, there is no compromise in policies proposed by different modules.
 
+Layered learning.
 
-
-MDP with Option
-\includegraphics[width=0.8\columnwidth]{option.png}
-\begin{itemize}
-  \item Option: (start state, policy, termination condition).
-\end{itemize}
-
-
-
-\begin{itemize}
-  \item State: $S$.
-  \item Action: $A, {\color{red}O}$.
-  \item Transition: $P: S \times {\color{red}\{A, O\}} \times S \rightarrow \mathcal{R}$.
-  \item Reward: $R: S \times {\color{red}\{A, O\}} \times S \rightarrow \mathcal{R}$.
-\end{itemize}
-
-
-
-Hierarchies of Abstract Machines (HAM)
-\includegraphics[width=0.8\columnwidth]{ham.png}
-\begin{itemize}
-  \item State machine of MDPs.
-\end{itemize}
-
-
-
-Hierarchical RL
-\includegraphics[width=0.4\columnwidth]{taxi.png}
-
-\includegraphics[width=0.8\columnwidth]{maxq.png}
-
-
-
-Hierarchical RL
-MDP:
-\begin{itemize}
-  \item State: {\color{red}$\mathcal{S}$}.
-  \item Action: {\color{red}$\mathcal{A}$}.
-  \item Transition: {\color{red}$\mathcal{T}$}.
-  \item Reward: {\color{red}$\mathcal{R}$}.
-\end{itemize}
-
-
-
-Modular RL
-\includegraphics[width=0.8\columnwidth]{mrl.png}
-
-
-
-MDP:
-\begin{itemize}
-  \item State: {\color{red}$S_1 \times S_2 \cdots \times S_M $}.
-  \item Action: $A$.
-  \item Transition: {\color{red}$P_1 \times P_2 \cdots \times P_M $}.
-  \item Reward: {\color{red}$R_1 \times R_2 \cdots \times R_M $}.
-\end{itemize}
-
-
-
-
-\section{Ideas in Recent Work}
+Layered learning is similar to modular reinforcement learning, as the modules are
+run in parallel. However different modules correspond to different controllers. 
 
 Not fix a model.
 
-Learn the components,
+\section{Inverse Reinforcement Learning}
 
-Dynamic.
+We introduced basic concepts of inverse reinforcement learing in the last
+chapter. In this section, we discuss some advances in IRL and compare them with
+our methods.
+
+assume prior.

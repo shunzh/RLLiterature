@@ -2,7 +2,8 @@
 
 Modularization is one approach to reduce the dimension of the state space. In
 this section, we will discuss some major approaches of MDP decomposition as
-solutions to the curse of dimensionality. We will discuss a hierarchical
+solutions to the curse of dimensionality, and analyze their similarity and
+difference compared to the modular approach. We will discuss a hierarchical
 approach and a layered approach.
 
 Some complex tasks have explicit phases. Take the taxi domain for example
@@ -56,10 +57,10 @@ Layered learning is similar to modular reinforcement learning, as the modules ar
 run in parallel. However different modules correspond to different controllers
 or agents. They need to compromise to contribute to a higher level module, but
 not sharing a single controller.
-
 A recent work in layered learning makes some parameters in lower level modules
-available to change in the process of training of a higher level module. This is
-the same idea as parameterizing modules in modular reinforcement learning. 
+available to change in the process of training of a higher level module
+\cite{macalpine2015ut}. This is the same idea as parameterizing modules in
+modular reinforcement learning. 
 
 \section{Inverse Reinforcement Learning}
 
@@ -68,10 +69,19 @@ chapter. In this section, we discuss some advances in IRL and compare them with
 our methods.
 
 The original IRL algorithm is formulated by
-\cite{abbeel2004apprenticeship,ng2000algorithms}.  A popular following work is
-Bayesian inverse reinforcement learning. It assumes that the rewards are drawn
-from a prior distribution \cite{ramachandran2007bayesian}.
+\cite{abbeel2004apprenticeship,ng2000algorithms}. A popular following work is
+Bayesian inverse reinforcement learning (Bayesian IRL) \cite{ramachandran2007bayesian}.
+It is motiviated by the
+observation that rewards are not completely arbitrary. We can reasonably assume
+some prior knowledge of the rewards. Bayesian IRL assumes that the rewards are
+drawn from a prior distribution. 
+For example, in most of the problems, rewards are generally sparse. So the
+reward of a state is very likely to be 0. A Gaussian or Laplacian prior can be
+applied.  In planning problems, on the contrary, rewards are generally small but
+positive for most of the states. Then a Beta prior can be applied.
 
-Recent developments in Bayesian
-IRL include \cite{choi2011map,choi2012nonparametric,dimitrakakis2012bayesian}.
-
+Other recent developments in Bayesian IRL include
+\cite{choi2011map,choi2012nonparametric,dimitrakakis2012bayesian}.
+\cite{choi2011map} uses MAP inference to solve the Bayesian IRL problem.
+\cite{choi2012nonparametric,dimitrakakis2012bayesian} tackle the problem of
+recovering rewards in domains with multiple tasks or multiple rewards. 

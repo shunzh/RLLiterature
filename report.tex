@@ -37,7 +37,7 @@ and when to terminate and switch to another skill.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{skills}
-\caption{(Left) Taxi domain. (Right) A decomposition of the task.}
+\caption{Skill chaining in robot motion.}
 \label{fig:skills}
 \end{figure}
 
@@ -53,14 +53,27 @@ not restricted to reinforcement learning. Similar to hierarchical learning, it
 also assumes a hierarchy of the task. A module has some parameters. When one
 layer is optimized, the upper layer.
 
-Layered learning is similar to modular reinforcement learning, as the modules are
-run in parallel. However different modules correspond to different controllers
-or agents. They need to compromise to contribute to a higher level module, but
-not sharing a single controller.
+One example is learning in robot soccer. In Figure~\ref{fig:soccer}, each block
+is an module. The number in the parenthesis is the number of parameters involved
+in each module. The arrows indicate the dependency relations between modules.
+Training starts from the bottom layer, then propagate upwards to higher level
+layers.
 A recent work in layered learning makes some parameters in lower level modules
 available to change in the process of training of a higher level module
 \cite{macalpine2015ut}. This is the same idea as parameterizing modules in
 modular reinforcement learning. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{layered}
+\caption{Layered learning in robot soccer. \cite{macalpine2015ut}}
+\label{fig:soccer}
+\end{figure}
+
+Layered learning is similar to modular reinforcement learning, as the modules are
+run in parallel. However different modules correspond to different controllers
+or agents. They need to compromise to contribute to a higher level module, but
+not sharing a uniform output interface.
 
 \section{Inverse Reinforcement Learning}
 
@@ -79,6 +92,10 @@ For example, in most of the problems, rewards are generally sparse. So the
 reward of a state is very likely to be 0. A Gaussian or Laplacian prior can be
 applied.  In planning problems, on the contrary, rewards are generally small but
 positive for most of the states. Then a Beta prior can be applied.
+Concretely, according to the Bayes rule,
+$$P(R|O) = \frac{P(O|R)P(R)}{P(O)}$$
+, where $O$ is the observed data, $R$ is the reward vector. Bayesian IRL assumes
+$P(R)$ to be non-uniform.
 
 Other recent developments in Bayesian IRL include
 \cite{choi2011map,choi2012nonparametric,dimitrakakis2012bayesian}.

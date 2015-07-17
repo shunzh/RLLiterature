@@ -29,7 +29,7 @@ available.
 
 A similar approach is skill chaining \cite{konidaris2009skill}, which can
 be seen as a hierarchical RL approach. Figure~\ref{fig:skills} shows
-an example that a robot navigates in a domain with obstacles. The red circle is
+an example that a robot navigates in a domain with obsacles. The red circle is
 the goal. The robot starts from the left-bottom corner. It has several trained
 skills, represented by different colors. The robot learns which skill to use,
 and when to terminate and switch to another skill.
@@ -43,11 +43,11 @@ and when to terminate and switch to another skill.
 
 Hierarchical reinforcement learning is different from modular reinforcement
 learning in a way that the former approach doesn't involve concurrent modules
-(or subtasks, skills, depending on context).
+(or sutasks, skills, depending on context).
 For example, the Pickup module doesn't run parallel with Navigate module.
 Therefore, there is no compromise in policies proposed by different modules.
 
-Apart from hierarchical RL, layered learning is another approach to decompose a
+Apart from hierachical RL, layered learning is another approach to decompose a
 complex task \cite{stone2000layered}. This is a general learning method that may
 not restricted to reinforcement learning. Similar to hierarchical learning, it
 also assumes a hierarchy of the task. A module has some parameters. When one
@@ -64,14 +64,14 @@ modular reinforcement learning.
 
 \section{Inverse Reinforcement Learning}
 
-We introduced basic concepts of inverse reinforcement learning in the last
+We introduced basic concepts of inverse reinforcement learing in the last
 chapter. In this section, we discuss some advances in IRL and compare them with
 our methods.
 
 The original IRL algorithm is formulated by
 \cite{abbeel2004apprenticeship,ng2000algorithms}. A popular following work is
 Bayesian inverse reinforcement learning (Bayesian IRL) \cite{ramachandran2007bayesian}.
-It is motivated by the
+It is motiviated by the
 observation that rewards are not completely arbitrary. We can reasonably assume
 some prior knowledge of the rewards. Bayesian IRL assumes that the rewards are
 drawn from a prior distribution. 

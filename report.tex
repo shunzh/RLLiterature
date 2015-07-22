@@ -25,7 +25,7 @@ We assume that there is a known structure of the task, and the
 learning is decomposed hierarchically. At a higher level, an action can be
 which lower level task to execute. For example, in the Get task, the two actions
 available would be Pickup and Navigate. At the bottom level, primary actions are
-available.
+accessible.
 
 A similar approach is skill chaining \cite{konidaris2009skill}, which can
 be seen as a hierarchical RL approach. Figure~\ref{fig:skills} shows
@@ -43,15 +43,17 @@ and when to terminate and switch to another skill.
 
 Hierarchical reinforcement learning is different from modular reinforcement
 learning in a way that the former approach doesn't involve concurrent modules
-(or subtasks, skills, depending on context).
+(or subtasks, skills, depending on the context).
 For example, the Pickup module doesn't run parallel with Navigate module.
 Therefore, there is no compromise in policies proposed by different modules.
 
 Apart from hierarchical RL, layered learning is another approach to decompose a
 complex task \cite{stone2000layered}. This is a general learning method that may
 not restricted to reinforcement learning. Similar to hierarchical learning, it
-also assumes a hierarchy of the task. A module has some parameters. When one
-layer is optimized, the upper layer.
+also assumes a hierarchy of the task. A module has some parameters. The
+optimization startes from the bottom layer. When the parametres in modules in
+the same layer are optimized, the optimization for the upper layer starts. A
+module will use the modules in the lower layers.
 
 One example is learning in robot soccer. In Figure~\ref{fig:soccer}, each block
 is an module. The number in the parenthesis is the number of parameters involved
@@ -61,7 +63,7 @@ layers.
 A recent work in layered learning makes some parameters in lower level modules
 available to change in the process of training of a higher level module
 \cite{macalpine2015ut}. This is the same idea as parameterizing modules in
-modular reinforcement learning. 
+modular inverse reinforcement learning. 
 
 \begin{figure}[h]
 \centering

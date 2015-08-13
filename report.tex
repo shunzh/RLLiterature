@@ -44,12 +44,12 @@ and when to terminate and switch to another skill.
 Hierarchical reinforcement learning is different from modular reinforcement
 learning in a way that the former approach doesn't involve concurrent modules
 (or subtasks, skills, depending on the context).
-For example, the Pickup module doesn't run parallel with Navigate module.
+For example, the Pickup module doesn't run in parallel with Navigate module.
 Therefore, there is no compromise in policies proposed by different modules.
 
 Apart from hierarchical RL, layered learning is another approach to decompose a
 complex task \cite{stone2000layered}. This is a general learning method that may
-not restricted to reinforcement learning. Similar to hierarchical learning, it
+not be restricted to reinforcement learning. Similar to hierarchical learning, it
 also assumes a hierarchy of the task. A module has some parameters. The
 optimization starts from the bottom layer. When the parameters in modules in
 the same layer are optimized, the optimization for the upper layer starts. A
@@ -68,14 +68,18 @@ modular inverse reinforcement learning.
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{layered}
-\caption{Layered learning in robot soccer. \cite{macalpine2015ut}}
+\caption{Layered learning in robot soccer \cite{macalpine2015ut}. The boxes are
+modules and the arrows point from higher-level behaviors to lower-level
+behaviors. For example, \textit{Kick\_Fast\_Primitive} (left-top corner) is used
+by  \textit{Kick\_Fast\_Behavior}. The latter, along with other three modules,
+is used by \textit{Walk\_ApproachToKick}.}
 \label{fig:soccer}
 \end{figure}
 
 Layered learning is similar to modular reinforcement learning, as the modules are
 run in parallel. However different modules correspond to different controllers
 or agents. They need to compromise to contribute to a higher level module, but
-not sharing a uniform output interface.
+unlike modular RL, they do not need to compromise to generate a single policy.
 
 \section{Inverse Reinforcement Learning}
 
@@ -84,14 +88,14 @@ chapter. In this section, we discuss some advances in IRL and compare them with
 our methods.
 
 The original IRL algorithm is formulated by
-\cite{abbeel2004apprenticeship,ng2000algorithms}. A popular following work is
+\cite{abbeel2004apprenticeship,ng2000algorithms}. A popular subsequent work is
 Bayesian inverse reinforcement learning (Bayesian IRL) \cite{ramachandran2007bayesian}.
 It is motivated by the
 observation that rewards are not completely arbitrary. We can reasonably assume
 some prior knowledge of the rewards. Bayesian IRL assumes that the rewards are
 drawn from a prior distribution. 
 For example, in most of the problems, rewards are generally sparse. So the
-reward of a state is very likely to be 0. A Gaussian or Laplacian prior can be
+reward of a state is very likely to be 0. So a Gaussian or Laplacian prior can be
 applied.  In planning problems, on the contrary, rewards are generally small but
 positive for most of the states. Then a Beta prior can be applied.
 Concretely, according to the Bayes rule,
